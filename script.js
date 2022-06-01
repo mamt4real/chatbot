@@ -134,7 +134,7 @@ const initialLoad = () => {
       caseSummary = response
       const handleCountry = (e) => {
         chatContainer.appendChild(getChatElement('Get Country Stats'))
-        appendChild(getChatElement('Enter your Country', true))
+        appendChild(getChatElement('Enter your Country: ', true))
         isCountryStats = true
       }
 
