@@ -41,7 +41,7 @@ body {
 .main__wrapper {
   display: flex;
   min-width: 70vw;
-  height: 70vh;
+  height: 80vh;
   gap: 2rem;
   padding: 2rem;
 }
@@ -152,6 +152,7 @@ body {
 
 .chats h3 {
   margin: 4px;
+  color: darkblue;
 }
 span.chats__timestamp {
   font-size: xx-small;
@@ -230,6 +231,16 @@ button:hover {
 }
 .symptom > li > span {
   text-transform: capitalize;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+  margin-bottom: 4px;
+}
+.row > .key {
   font-weight: 600;
 }
 
