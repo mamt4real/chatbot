@@ -49,9 +49,11 @@ const getCountrySummary = (country) => {
 const faq = document.getElementById('faq')
 const chatContainer = document.getElementById('chat__container')
 const typing = document.getElementById('loading')
+const input = document.getElementById('message')
 let isCountryStats = false
 
 const faqHandler = (que, ans) => (e) => {
+  if (isCountryStats) return input.focus()
   chatContainer.appendChild(getChatElement(que))
   appendChild(getChatElement(ans, true))
   e.target.remove()
