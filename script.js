@@ -2,31 +2,6 @@ import { greetings, queAns } from './staticAnswers.js'
 
 let caseSummary = {}
 //get the current world cases summary of covid-19
-fetch('https://api.covid19api.com/summary')
-  .then((response) => response.json())
-  .then((response) => {
-    caseSummary = response
-    const handleCountry = (e) => {
-      chatContainer.appendChild(getChatElement('Get Country Stats'))
-      appendChild(getChatElement('Enter your Country', true))
-      isCountryStats = true
-    }
-
-    const country = document.createElement('li')
-    country.textContent = 'Country Stats'
-    country.addEventListener('click', handleCountry)
-
-    const global = document.createElement('li')
-    global.textContent = 'Global Case Summary'
-    global.addEventListener(
-      'click',
-      faqHandler('Global Cases Summary', getCountrySummary())
-    )
-
-    faq.appendChild(country)
-    faq.appendChild(global)
-  })
-  .catch((err) => console.error(err))
 
 const getCountrySummary = (country) => {
   let data
@@ -143,6 +118,7 @@ const reset = () => {
 }
 
 document.getElementById('chat__form').addEventListener('submit', handleSubmit)
+document.getElementById('reset').addEventListener('click', reset)
 
 const initialLoad = () => {
   for (const [key, value] of Object.entries(queAns)) {
@@ -151,6 +127,31 @@ const initialLoad = () => {
     q.addEventListener('click', faqHandler(key, value))
     faq.append(q)
   }
+  fetch('https://api.covid19api.com/summary')
+    .then((response) => response.json())
+    .then((response) => {
+      caseSummary = response
+      const handleCountry = (e) => {
+        chatContainer.appendChild(getChatElement('Get Country Stats'))
+        appendChild(getChatElement('Enter your Country', true))
+        isCountryStats = true
+      }
+
+      const country = document.createElement('li')
+      country.textContent = 'Get Country Cases Stats'
+      country.addEventListener('click', handleCountry)
+
+      const global = document.createElement('li')
+      global.textContent = 'Global Cases Summary'
+      global.addEventListener(
+        'click',
+        faqHandler('Global Cases Summary', getCountrySummary())
+      )
+
+      faq.appendChild(country)
+      faq.appendChild(global)
+    })
+    .catch((err) => console.error(err))
 }
 
 initialLoad()
