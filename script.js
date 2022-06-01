@@ -113,7 +113,6 @@ const getChatElement = (message, isBot = false) => {
     `
   return msg
 }
-
 const reset = () => {
   chatContainer.innerHTML = ''
   faq.innerHTML = ''
