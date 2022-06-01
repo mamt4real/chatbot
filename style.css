@@ -7,6 +7,11 @@ body {
   place-items: center;
   min-height: 100vh;
   scroll-behavior: smooth;
+  background: linear-gradient(
+    rgb(212, 35, 35),
+    rgb(80, 80, 217),
+    rgb(93, 211, 93)
+  );
 }
 
 /* ::-webkit-scrollbar {

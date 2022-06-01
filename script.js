@@ -1,4 +1,4 @@
-import { greetings, queAns } from './staticAnswers.js'
+import { greetings, queAns, micellaneous } from './staticAnswers.js'
 
 let caseSummary = {}
 //get the current world cases summary of covid-19
@@ -68,6 +68,7 @@ const getAnswer = (question) => {
   <p>I am here to help you refresh your basic Knowledge about Covid19</p>
   `
     else return random(greetings)
+  else if (Object.keys(queAns).includes(question)) return queAns[question]
   else return random(micellaneous)
 }
 

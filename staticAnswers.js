@@ -36,8 +36,8 @@ const symptoms = {
   'conjucvictal congestion': 1,
 }
 
-export const greetings = ['hello', 'hi', 'good morning', 'hey']
-const micellaneous = ['sure..', 'exactly.', "couldn't agree more!"]
+export const greetings = ['hello', 'hi', 'good morning', 'hey','good evening']
+export const micellaneous = ['sure..', 'exactly.', "couldn't agree more!"]
 
 export const queAns = {
   'What is Covid19': `<h3>Covid-19</h3><ul class='symptom covid'>
